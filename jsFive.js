@@ -38,9 +38,7 @@ const u = canv.height;
 let purpleX = 210;
 let purpleY = e;
 
-
 let arrY = [a1, y, e1, o, a, e, u];
-
 
 let arrX0 = [b, c];
 let arrX1 = [g, s];
@@ -50,14 +48,9 @@ let arrX4 = [b, c, t, k];
 let arrX5 = [d, f];
 let arrX6 = [u];
 
-
-
-
 let arrArr = [arrX0, arrX1, arrX2, arrX3, arrX4, arrX5, arrX6];
 
 let levelInvert;
-
-
 
 let pltfrm = true;
 
@@ -102,7 +95,7 @@ function drawing() {
 
 
     ctx.clearRect(0, 0, canv.width, canv.height);
-    
+
     //moveStand_();
 
     ctx.drawImage(background, 750, 400, 400, 390, 0, 0, 400, 400);
@@ -118,14 +111,14 @@ function drawing() {
 
     // ctx.beginPath();
     // ctx.strokeStyle = 'red';
-    // ctx.lineWidth = 1; 
+    // ctx.lineWidth = 1;
     // ctx.moveTo(purpleX, purpleY);
     // ctx.lineTo(purpleX + 50, purpleY);
-   
-    
+
+
     ctx.stroke();
 
-    
+
 
     ctx.font = "15px Tahoma";
     ctx.fillStyle = "black";
@@ -231,7 +224,7 @@ function jumpCheck() {
         }
 
       //  checkY_invert();
-        
+
     }
 
 }
@@ -244,7 +237,7 @@ function fallCheck() {
     }
 
     if (pltfrm === false && jumpPermission === false) {
-        // count++;  
+        // count++;
         fall();
        checkY_invert();
         if (fallPltfrm === true) {
@@ -383,11 +376,11 @@ function buttonRight() {
 }
 
 function buttonLeft() {
-    toLeft = true; 
+    toLeft = true;
 }
 
 function buttonUp() {
-    toUp = true;   
+    toUp = true;
 }
 
 function buttonDown() {
@@ -411,10 +404,10 @@ function abortDown() {
     toDown = false;
 }
 
-//----------------------------- terms of movements ---------------------------------------- 
+//----------------------------- terms of movements ----------------------------------------
 function moveWithoutDelay() {
 
-    
+
     if (toRight === true && toUp === false && toDown === false && tapLand === false) {
         moveRight();
     } else if (toLeft === true && toUp === false && toDown === false && tapLand === false) {
@@ -423,7 +416,7 @@ function moveWithoutDelay() {
         moveUp();
     } else if (toDown === true && toLeft === false && toRight === false) {
         moveDown();
-        
+
     } else if (toRight === true && toUp === true) {
         moveRight();
         moveUp();
@@ -446,11 +439,11 @@ function engineGear() {
     moveWithoutDelay();
     checkX();
     fallCheck();
-    
+
 }
 
 function engineGear_1() {
-    
+
     lineGrow();
     check_move();
 }

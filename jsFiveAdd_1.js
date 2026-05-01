@@ -1,31 +1,9 @@
 let grabY;
 let drawX, drawY;
 
-let move_stand = {
+let move_idle = [73, 133, 191, 250, 307, 365, 424];
 
-    1 : 73,
-    2 : 133,
-    3 : 191,
-    4 : 250,
-    5 : 307,
-    6 : 365,
-    7 : 424,
-   
-   };
-   
-   let move_right = {
-   
-       1 : 0,
-       2 : 59,
-       3 : 116,
-       4 : 174,
-       5 : 231,
-       6 : 288,
-       7 : 346,
-       8 : 404,
-       9 : 471,
-
-    };
+let move_right = [0, 59, 116, 174, 231, 288, 346, 404, 471]; // * the number follows begin sprite in move's set
 
 let move_sit = {
     1 : 974,
@@ -82,31 +60,31 @@ let background = document.getElementById('background');
 
  function moveRight_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight ){
     ctx.drawImage(scorpion, frame, 128, 54, 103, purpleX, purpleY, 51, -103);
-} 
+}
 function moveLeft_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight ){
     ctx.drawImage(scorpion, frame, 128, 54, 103, purpleX, purpleY, 51, -103);
-} 
+}
 
  function moveStand_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, frame, 3, 54, 98,  purpleX, purpleY, 51, -98);
-} 
+}
 
 function moveSit_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
-} 
+}
 
 function moveBlockSit_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
-} 
+}
 
 function moveJumpRaise_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, 565, 158, 43, 73,  purpleX, purpleY, 43, -73);
-} 
+}
 
 function moveJumpFall_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
-} 
+}
 
 function moveJumpEnd_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
     ctx.drawImage(scorpion, 675, 141, 41, 90,  purpleX, purpleY, 41, -90);
-} 
+}
