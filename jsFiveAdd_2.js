@@ -80,9 +80,9 @@ function lineGrow() {
   }
 
   if (toDown === false && trig_sit === true) {
-    if (shot > 3) shot = 3
-    if (shot >= 2) shot--
-    if (shot === 1) trig_sit = false
+    if (shot > 3) shot = 3;
+    if (shot >= 2) shot--;
+    if (shot === 1) trig_sit = false;
 
     if (shot === 1) {
       frame = move_sit[1];
@@ -138,10 +138,7 @@ function lineGrow() {
   }
   if (toDown === true && toLeft === false && toRight === false) {
     trig_sitBlock = false;
-  } else if (
-    (toDown === true && toLeft === true) ||
-    (toDown === true && toRight === true)
-  ) {
+  } else if ((toDown === true && toLeft === true) || (toDown === true && toRight === true)) {
     if (shot >= 2) {
       shot = 2;
     } else {

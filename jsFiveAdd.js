@@ -16,70 +16,129 @@ let shot = 1;
 let mVnG = false;
 
 let box_move;
+// function check_move() {
+//   // console.log(shot, 'shot');
+//   if (
+//     toRight === true &&
+//     toDown === false &&
+//     dMove === true &&
+//     upMove === false &&
+//     tapLand === false
+//   ) {
+//     if (box_move !== moveRight_) {
+//       box_move = moveRight_;
+//     }
+//   } else if (
+//     toRight === false &&
+//     toLeft === false &&
+//     dMove === true &&
+//     upMove === false &&
+//     tapLand === false
+//   ) {
+//     if (box_move !== moveStand_) {
+//       box_move = moveStand_;
+//     }
+//   } else if (
+//     toLeft === true &&
+//     toDown === false &&
+//     dMove === true &&
+//     upMove === false &&
+//     tapLand === false
+//   ) {
+//     if (box_move !== moveLeft_) {
+//       box_move = moveLeft_;
+//     }
+//   } else if (
+//     toDown === true &&
+//     dMove === true &&
+//     upMove === false &&
+//     tapLand === false
+//   ) {
+//     if (box_move !== moveSit_) {
+//       box_move = moveSit_;
+//     }
+//   } else if (
+//     (toLeft === true &&
+//       toDown === true &&
+//       dMove === true &&
+//       upMove === false &&
+//       tapLand === false) ||
+//     (toRight === true &&
+//       toDown === true &&
+//       dMove === true &&
+//       upMove === false &&
+//       tapLand === false)
+//   ) {
+//     if (box_move !== moveBlockSit_) {
+//       box_move = moveBlockSit_;
+//     }
+//   } else if (dMove === false && tapLand === false) {
+//     if (box_move !== moveJumpFall_) {
+//       box_move = moveJumpFall_;
+//     }
+//   } else if (upMove === true && tapLand === false) {
+//     if (box_move !== moveJumpRaise_) {
+//       box_move = moveJumpRaise_;
+//     }
+//   }
+// }
 function check_move() {
-  // console.log(shot, 'shot');
-  if (
-    toRight === true &&
-    toDown === false &&
-    dMove === true &&
-    upMove === false &&
-    tapLand === false
-  ) {
-    if (box_move !== moveRight_) {
-      box_move = moveRight_;
-    }
-  } else if (
-    toRight === false &&
-    toLeft === false &&
-    dMove === true &&
-    upMove === false &&
-    tapLand === false
-  ) {
-    if (box_move !== moveStand_) {
-      box_move = moveStand_;
-    }
-  } else if (
-    toLeft === true &&
-    toDown === false &&
-    dMove === true &&
-    upMove === false &&
-    tapLand === false
-  ) {
-    if (box_move !== moveLeft_) {
-      box_move = moveLeft_;
-    }
-  } else if (
-    toDown === true &&
-    dMove === true &&
-    upMove === false &&
-    tapLand === false
-  ) {
-    if (box_move !== moveSit_) {
-      box_move = moveSit_;
-    }
-  } else if (
-    (toLeft === true &&
+  switch (true) {
+    // Движение вправо
+    case toRight === true &&
+      toDown === false &&
+      dMove === true &&
+      upMove === false &&
+      tapLand === false:
+      if (box_move !== moveRight_) box_move = moveRight_;
+      break;
+
+    // Стоять на месте
+    case toRight === false &&
+      toLeft === false &&
+      dMove === true &&
+      upMove === false &&
+      tapLand === false:
+      if (box_move !== moveStand_) box_move = moveStand_;
+      break;
+
+    // Движение влево
+    case toLeft === true &&
+      toDown === false &&
+      dMove === true &&
+      upMove === false &&
+      tapLand === false:
+      if (box_move !== moveLeft_) box_move = moveLeft_;
+      break;
+
+    // Присесть (только вниз, без влево/вправо)
+    case toDown === true && dMove === true && upMove === false && tapLand === false:
+      if (box_move !== moveSit_) box_move = moveSit_;
+      break;
+
+    // Блок сидя (вниз + влево или вниз + вправо)
+    case toLeft === true &&
       toDown === true &&
       dMove === true &&
       upMove === false &&
-      tapLand === false) ||
-    (toRight === true &&
+      tapLand === false:
+    case toRight === true &&
       toDown === true &&
       dMove === true &&
       upMove === false &&
-      tapLand === false)
-  ) {
-    if (box_move !== moveBlockSit_) {
-      box_move = moveBlockSit_;
-    }
-  } else if (dMove === false && tapLand === false) {
-    if (box_move !== moveJumpFall_) {
-      box_move = moveJumpFall_;
-    }
-  } else if (upMove === true && tapLand === false) {
-    if (box_move !== moveJumpRaise_) {
-      box_move = moveJumpRaise_;
-    }
+      tapLand === false:
+      if (box_move !== moveBlockSit_) box_move = moveBlockSit_;
+      break;
+
+    // Падение / полёт вниз
+    case dMove === false && tapLand === false:
+      if (box_move !== moveJumpFall_) box_move = moveJumpFall_;
+      break;
+
+    // Прыжок вверх
+    case upMove === true && tapLand === false:
+      if (box_move !== moveJumpRaise_) box_move = moveJumpRaise_;
+      break;
   }
 }
 

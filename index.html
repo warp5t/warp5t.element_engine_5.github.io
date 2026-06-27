@@ -1,111 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORKROOMFIVE </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WORKROOMFIVE</title>
     <style type="text/css">
-    #R {
+      #R {
         width: 130px;
         height: 70px;
         color: indianred;
         font-size: 21px;
-    }
-    #L {
+      }
+      #L {
         width: 130px;
         height: 70px;
         color: indianred;
         font-size: 21px;
-    }
-    #D {
-        position:relative;
+      }
+      #D {
+        position: relative;
 
         color: indianred;
         font-size: 21px;
         width: 130px;
         height: 70px;
-    }
-    #U {
-        position:relative;
+      }
+      #U {
+        position: relative;
 
         width: 130px;
         height: 70px;
         color: indianred;
         font-size: 21px;
-    }
-    #Jump {
+      }
+      #Jump {
         width: 130px;
         height: 70px;
         color: rgb(92, 205, 126);
         font-size: 21px;
-    }
-    #test {
+      }
+      #test {
         color: rgb(92, 205, 126);
         font-size: 21px;
-    }
-    #test_1 {
+      }
+      #test_1 {
         color: rgb(205, 188, 92);
         font-size: 21px;
-    }
-    .text{
+      }
+      .text {
         position: relative;
         left: 50px;
-    }
-    .pannel{
+      }
+      .pannel {
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    #canvas{
+      }
+      #canvas {
         display: flex;
         justify-content: center;
         overflow: hidden;
-    }
-    body{
-       overflow: hidden;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       flex-direction: column;
-
-    }
+      }
+      body {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
     </style>
-</head>
-<body>
-    <div style="display: flex;">
+  </head>
+  <body>
+    <div style="display: flex">
+      <div>
+        <canvas id="canvas_00" height="400" width="400" style="border: 1px solid purple"> </canvas>
+      </div>
+      <div>
         <div>
-            <canvas id="canvas_00" height="400" width="400" style = "border:1px solid purple"> </canvas>
+          <canvas id="canvas" height="400" width="400" style="border: 1px solid purple"> </canvas>
         </div>
-        <div>
-            <div>
-                <canvas id="canvas" height="400" width="400" style = "border:1px solid purple"> </canvas>
+        <div class="pannel" style="width: 100%; max-width: 400px">
+          <div style="width: 206px">
+            <div
+              style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%"
+            >
+              <button type="button" id="U" style="width: 100%; box-sizing: border-box">Up</button>
             </div>
-            <div class="pannel"  style="width: 100%; max-width: 400px;" >
-                <div style="width: 206px;">
-                    <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
-                        <button type="button" id="U" style="width: 100%; box-sizing: border-box;">Up</button>
-                    </div>
-                    <button type="button" id="L" style="width: 100%; box-sizing: border-box; max-width: 100px;">Left</button>
-                    <button type="button" id="R" style="width: 100%; box-sizing: border-box; max-width: 100px;">Right</button>
-                    <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
-                        <button type="button" id="D" style="width: 100%; box-sizing: border-box; max-width: 100px;">Down</button>
-                    </div>
-                </div>
-                <button type="button" id="Jump" style="width: 100%; box-sizing: border-box; max-width: 100px;">Jump</button>
+            <button
+              type="button"
+              id="L"
+              style="width: 100%; box-sizing: border-box; max-width: 100px"
+            >
+              Left
+            </button>
+            <button
+              type="button"
+              id="R"
+              style="width: 100%; box-sizing: border-box; max-width: 100px"
+            >
+              Right
+            </button>
+            <div
+              style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%"
+            >
+              <button
+                type="button"
+                id="D"
+                style="width: 100%; box-sizing: border-box; max-width: 100px"
+              >
+                Down
+              </button>
             </div>
+          </div>
+          <button
+            type="button"
+            id="Jump"
+            style="width: 100%; box-sizing: border-box; max-width: 100px"
+          >
+            Jump
+          </button>
         </div>
+      </div>
     </div>
 
-        <!-- <button id="test_1">Test1</button>-->
-        <img id="scorpion" src="scorpion.png">
-        <img id="scorpion_M" src="scorpionMirrow.png">
-        <img id="background" src="background.png">
+    <!-- <button id="test_1">Test1</button>-->
+    <img id="scorpion" src="scorpion.png" />
+    <img id="scorpion_M" src="scorpionMirrow.png" />
+    <img id="background" src="background.png" />
 
     <script src="jsFiveAdd_2.js"></script>
     <script src="jsFiveAdd_1.js"></script>
     <script src="jsFiveAdd.js"></script>
     <script src="jsFive.js"></script>
     <script src="jsMonitoring.js"></script>
-</body>
+  </body>
 </html>
