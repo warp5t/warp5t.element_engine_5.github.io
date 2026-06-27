@@ -16,6 +16,7 @@ let shot = 1;
 let mVnG = false;
 
 let box_move;
+// -------------------------------------------
 // function check_move() {
 //   // console.log(shot, 'shot');
 //   if (
@@ -82,63 +83,31 @@ let box_move;
 //     }
 //   }
 // }
+// ----------------------
 function check_move() {
-  switch (true) {
-    // Движение вправо
-    case toRight === true &&
-      toDown === false &&
-      dMove === true &&
-      upMove === false &&
-      tapLand === false:
-      if (box_move !== moveRight_) box_move = moveRight_;
-      break;
-
-    // Стоять на месте
-    case toRight === false &&
-      toLeft === false &&
-      dMove === true &&
-      upMove === false &&
-      tapLand === false:
-      if (box_move !== moveStand_) box_move = moveStand_;
-      break;
-
-    // Движение влево
-    case toLeft === true &&
-      toDown === false &&
-      dMove === true &&
-      upMove === false &&
-      tapLand === false:
-      if (box_move !== moveLeft_) box_move = moveLeft_;
-      break;
-
-    // Присесть (только вниз, без влево/вправо)
-    case toDown === true && dMove === true && upMove === false && tapLand === false:
-      if (box_move !== moveSit_) box_move = moveSit_;
-      break;
-
-    // Блок сидя (вниз + влево или вниз + вправо)
-    case toLeft === true &&
-      toDown === true &&
-      dMove === true &&
-      upMove === false &&
-      tapLand === false:
-    case toRight === true &&
-      toDown === true &&
-      dMove === true &&
-      upMove === false &&
-      tapLand === false:
-      if (box_move !== moveBlockSit_) box_move = moveBlockSit_;
-      break;
-
-    // Падение / полёт вниз
-    case dMove === false && tapLand === false:
-      if (box_move !== moveJumpFall_) box_move = moveJumpFall_;
-      break;
-
-    // Прыжок вверх
-    case upMove === true && tapLand === false:
-      if (box_move !== moveJumpRaise_) box_move = moveJumpRaise_;
-      break;
+  if (tapLand === true) {
+    if (box_move !== moveJumpEnd_) box_move = moveJumpEnd_;
+    return;
+  }
+  if (dMove === false && !upMove) {
+    if (box_move !== moveJumpFall_) box_move = moveJumpFall_;
+    return;
+  }
+  if (upMove) {
+    if (box_move !== moveJumpRaise_) box_move = moveJumpRaise_;
+    return;
+  }
+  // дальше только ground-состояния (dMove === true, не в воздухе)
+  if (toDown && (toLeft || toRight)) {
+    if (box_move !== moveBlockSit_) box_move = moveBlockSit_;
+  } else if (toDown) {
+    if (box_move !== moveSit_) box_move = moveSit_;
+  } else if (toRight) {
+    if (box_move !== moveRight_) box_move = moveRight_;
+  } else if (toLeft) {
+    if (box_move !== moveLeft_) box_move = moveLeft_;
+  } else if (box_move !== moveStand_) {
+    box_move = moveStand_;
   }
 }
 
