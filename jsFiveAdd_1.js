@@ -58,33 +58,45 @@ let scorpion = document.getElementById('scorpion');
 let scorpion_M = document.getElementById('scorpion_M');
 let background = document.getElementById('background');
 
- function moveRight_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight ){
+
+function moveRight_() {
+    // * (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight )
     ctx.drawImage(scorpion, frame, 128, 54, 103, purpleX, purpleY, 51, -103);
 }
-function moveLeft_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight ){
+function moveLeft_() {
     ctx.drawImage(scorpion, frame, 128, 54, 103, purpleX, purpleY, 51, -103);
 }
 
- function moveStand_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveStand_() {
     ctx.drawImage(scorpion, frame, 3, 54, 98,  purpleX, purpleY, 51, -98);
 }
 
-function moveSit_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveSit_() {
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
 }
 
-function moveBlockSit_ (image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveBlockSit_() {
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
 }
 
-function moveJumpRaise_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveJumpRaise_() {
     ctx.drawImage(scorpion, 565, 158, 43, 73,  purpleX, purpleY, 43, -73);
 }
 
-function moveJumpFall_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveJumpFall_() {
     ctx.drawImage(scorpion, frame, grabY, drawX, drawY,  purpleX, purpleY, drawX, -drawY);
 }
 
-function moveJumpEnd_(image,sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight){
+function moveJumpEnd_() {
     ctx.drawImage(scorpion, 675, 141, 41, 90,  purpleX, purpleY, 41, -90);
 }
+
+//* image -  Картинка-источник (spritesheet): scorpion, scorpion_M, background
+//* sx - X координата левого верхнего угла вырезаемого кадра на spritesheet
+//* sy - Y координата левого верхнего угла вырезаемого кадра на spritesheet
+//* sWidth - Ширина вырезаемого фрагмента на spritesheet
+//* sHeight - Высота вырезаемого фрагмента на spritesheet
+//* dx - X на canvas, куда рисовать
+//* dy - Y на canvas, куда рисовать
+//* dWidth - Ширина на canvas (масштаб по X)
+//* dHeight - Высота на canvas (масштаб по Y; отрицательное значение — отражение по вертикали)

@@ -10,7 +10,6 @@ function lineGrow() {
     } else {
       shot++;
     }
-
     if (shot === 1) {
       frame = move_idle[0];
     } else if (shot === 2) {
@@ -136,7 +135,6 @@ function lineGrow() {
 
   if (toDown === false && trig_sitBlock === true) {
     trig_sitBlock = false;
-    // trig_sit = false;
   }
   if (toDown === true && toLeft === false && toRight === false) {
     trig_sitBlock = false;
@@ -178,7 +176,6 @@ function lineGrow() {
   if (tapLand === true) {
     if (ctn >= 3) {
       ctn++;
-      //shot = 1;
     } else {
       ctn++;
     }
