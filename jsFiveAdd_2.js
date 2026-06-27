@@ -81,10 +81,11 @@ function lineGrow() {
   }
 
   if (toDown === false && trig_sit === true) {
+    if (shot > 3) shot = 3
     if (shot >= 2) shot--
     if (shot === 1) trig_sit = false
 
-     if (shot === 1) {
+    if (shot === 1) {
       frame = move_sit[1];
       grabY = move_sit.grab1Y;
       drawX = move_sit.draw_x1;
@@ -135,6 +136,7 @@ function lineGrow() {
 
   if (toDown === false && trig_sitBlock === true) {
     trig_sitBlock = false;
+    // trig_sit = false;
   }
   if (toDown === true && toLeft === false && toRight === false) {
     trig_sitBlock = false;
