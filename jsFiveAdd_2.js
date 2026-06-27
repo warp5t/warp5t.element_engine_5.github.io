@@ -81,6 +81,25 @@ function lineGrow() {
   }
 
   if (toDown === false && trig_sit === true) {
+    if (shot >= 2) shot--
+    if (shot === 1) trig_sit = false
+
+     if (shot === 1) {
+      frame = move_sit[1];
+      grabY = move_sit.grab1Y;
+      drawX = move_sit.draw_x1;
+      drawY = move_sit.draw_y1;
+    } else if (shot === 2) {
+      frame = move_sit[2];
+      grabY = move_sit.grab2Y;
+      drawX = move_sit.draw_x2;
+      drawY = move_sit.draw_y2;
+    } else if (shot === 3) {
+      frame = move_sit[3];
+      grabY = move_sit.grab3Y;
+      drawX = move_sit.draw_x3;
+      drawY = move_sit.draw_y3;
+    }
     trig_sit = false;
   } else if (toDown === true) {
     if (shot >= 3) {

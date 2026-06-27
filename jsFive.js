@@ -407,7 +407,6 @@ function abortDown() {
 //----------------------------- terms of movements ----------------------------------------
 function moveWithoutDelay() {
 
-
     if (toRight === true && toUp === false && toDown === false && tapLand === false) {
         moveRight();
     } else if (toLeft === true && toUp === false && toDown === false && tapLand === false) {
@@ -439,7 +438,6 @@ function engineGear() {
     moveWithoutDelay();
     checkX();
     fallCheck();
-
 }
 
 function engineGear_1() {

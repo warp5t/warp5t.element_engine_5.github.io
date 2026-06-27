@@ -73,36 +73,39 @@
     </style>
 </head>
 <body>
-   <div>
-       <canvas id="canvas" height="400" width="400" style = "border:1px solid purple"> </canvas>
-   </div>
-    <div class="pannel"  style="width: 100%; max-width: 400px;" >
-        <div style="width: 206px;">
-            <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
-                <button type="button" id="U" style="width: 100%; box-sizing: border-box;">Up</button>
+    <div style="display: flex;">
+        <div>
+            <canvas id="canvas_00" height="400" width="400" style = "border:1px solid purple"> </canvas>
+        </div>
+        <div>
+            <div>
+                <canvas id="canvas" height="400" width="400" style = "border:1px solid purple"> </canvas>
             </div>
-            <button type="button" id="L" style="width: 100%; box-sizing: border-box; max-width: 100px;">Left</button>
-            <button type="button" id="R" style="width: 100%; box-sizing: border-box; max-width: 100px;">Right</button>
-            <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
-                <button type="button" id="D" style="width: 100%; box-sizing: border-box; max-width: 100px;">Down</button>
+            <div class="pannel"  style="width: 100%; max-width: 400px;" >
+                <div style="width: 206px;">
+                    <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
+                        <button type="button" id="U" style="width: 100%; box-sizing: border-box;">Up</button>
+                    </div>
+                    <button type="button" id="L" style="width: 100%; box-sizing: border-box; max-width: 100px;">Left</button>
+                    <button type="button" id="R" style="width: 100%; box-sizing: border-box; max-width: 100px;">Right</button>
+                    <div style="width: 100%; box-sizing: border-box; max-width: 100px; margin: 3px 0 3px 25%;">
+                        <button type="button" id="D" style="width: 100%; box-sizing: border-box; max-width: 100px;">Down</button>
+                    </div>
+                </div>
+                <button type="button" id="Jump" style="width: 100%; box-sizing: border-box; max-width: 100px;">Jump</button>
             </div>
         </div>
-        <button type="button" id="Jump" style="width: 100%; box-sizing: border-box; max-width: 100px;">Jump</button>
-     </div>
+    </div>
 
-    <!-- <button id="test_1">Test1</button>-->
-    <img id="scorpion" src="scorpion.png">
-    <img id="scorpion_M" src="scorpionMirrow.png">
-    <img id="background" src="background.png">
-
+        <!-- <button id="test_1">Test1</button>-->
+        <img id="scorpion" src="scorpion.png">
+        <img id="scorpion_M" src="scorpionMirrow.png">
+        <img id="background" src="background.png">
 
     <script src="jsFiveAdd_2.js"></script>
     <script src="jsFiveAdd_1.js"></script>
     <script src="jsFiveAdd.js"></script>
     <script src="jsFive.js"></script>
-
-    </div>
-
-
+    <script src="jsMonitoring.js"></script>
 </body>
 </html>
