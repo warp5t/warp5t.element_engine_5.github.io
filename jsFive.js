@@ -326,11 +326,15 @@ function moveDown() {
 }
 
 function moveRight() {
-    purpleX = purpleX + 2;
+    if (purpleX < 350) {
+        purpleX = purpleX + 2;
+    }
 }
 
 function moveLeft() {
-    purpleX = purpleX - 2;
+    if (purpleX > 0) {
+        purpleX = purpleX - 2;
+    }
 }
 
 //---------------------------- movement for keyboard buttons ----------------------------------
